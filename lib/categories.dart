@@ -11,14 +11,20 @@ class CategoriesScreen extends StatefulWidget {
 class _CategoriesScreenState extends State<CategoriesScreen> {
   @override
   Widget build(BuildContext context) {
-    return GridView(
-      children: DUMMY_CATEGORIES.map((element) {
-        return CategoryItem(element.title, element.color);
-      }).toList(),
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 200,
-        childAspectRatio: 3 / 2,
-        crossAxisSpacing: 16,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('DeliMeals'),
+      ),
+      body: GridView(
+        children: DUMMY_CATEGORIES.map((element) {
+          return CategoryItem(element.title, element.color);
+        }).toList(),
+        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20,
+        ),
       ),
     );
   }
