@@ -3,12 +3,7 @@ import 'package:flutter/material.dart';
 import './data/dummy_data.dart';
 import './widgets/category_item.dart';
 
-class CategoriesScreen extends StatefulWidget {
-  @override
-  _CategoriesScreenState createState() => _CategoriesScreenState();
-}
-
-class _CategoriesScreenState extends State<CategoriesScreen> {
+class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
