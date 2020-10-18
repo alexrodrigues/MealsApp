@@ -16,6 +16,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
         title: Text('DeliMeals'),
       ),
       body: GridView(
+        padding: EdgeInsets.all(16),
         children: DUMMY_CATEGORIES.map((element) {
           return CategoryItem(element.title, element.color);
         }).toList(),
