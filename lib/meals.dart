@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class MealsScreen extends StatefulWidget {
-  @override
-  _MealsScreenState createState() => _MealsScreenState();
-}
+import './model/category.dart';
 
-class _MealsScreenState extends State<MealsScreen> {
+class MealsScreen extends StatelessWidget {
+  final Category _category;
+  MealsScreen(this._category);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('DeliMeals'),
+          title: Text(_category.title),
         ),
         body: Center(child: Text('Recipe')));
   }

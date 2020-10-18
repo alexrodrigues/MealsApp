@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'package:meals_app/categories.dart';
 import 'package:meals_app/meals.dart';
+import '../model/category.dart';
 
 class CategoryItem extends StatelessWidget {
-  final String _title;
-  final Color _backgroundColor;
+  final Category _category;
 
-  CategoryItem(this._title, this._backgroundColor);
+  CategoryItem(this._category);
 
   void selectCategory(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(
-      builder: (context) => MealsScreen(),
+      builder: (context) => MealsScreen(_category),
     ));
   }
 
@@ -24,12 +23,12 @@ class CategoryItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(8),
         child: Text(
-          _title,
+          _category.title,
           style: Theme.of(context).textTheme.title,
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [_backgroundColor.withOpacity(0.7), _backgroundColor],
+            colors: [_category.color.withOpacity(0.7), _category.color],
             begin: Alignment.topLeft,
             end: Alignment.topRight,
           ),
