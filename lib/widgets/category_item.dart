@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../model/category.dart';
-import 'package:meals_app/meals.dart';
+import 'package:meals_app/screens/meals.dart';
 
 class CategoryItem extends StatelessWidget {
   final Category _category;
