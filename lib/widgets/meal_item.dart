@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../model/meal.dart';
+import './meal_item_info.dart';
 
 class MealItem extends StatelessWidget {
   final Meal _meal;
@@ -36,7 +37,54 @@ class MealItem extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                Positioned(
+                  bottom: 0,
+                  right: 10,
+                  child: Container(
+                    width: imageWidth,
+                    color: Colors.black54,
+                    padding: EdgeInsets.symmetric(
+                      vertical: 5,
+                      horizontal: 20,
+                    ),
+                    child: Text(
+                      _meal.title,
+                      style: TextStyle(
+                        fontSize: 26.0,
+                        color: Colors.white,
+                      ),
+                      softWrap: true,
+                      overflow: TextOverflow.fade,
+                    ),
+                  ),
+                ),
               ],
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: 20,
+                bottom: 20,
+              ),
+              child: Container(
+                width: imageWidth,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    MealItemInfo(
+                      Icons.schedule,
+                      "${_meal.duration} min",
+                    ),
+                    MealItemInfo(
+                      Icons.work,
+                      _meal.getComplexityText,
+                    ),
+                    MealItemInfo(
+                      Icons.attach_money,
+                      _meal.getAffordabilityText,
+                    ),
+                  ],
+                ),
+              ),
             )
           ],
         ),
