@@ -11,7 +11,7 @@ class MealDetailScreen extends StatelessWidget {
 
     final appBar = AppBar(title: Text(meal.title));
     final ingredientsHeight = MediaQuery.of(context).size.height -
-        (appBar.preferredSize.height + 300 + 90);
+        (appBar.preferredSize.height + 300 + 120);
 
     return Scaffold(
       appBar: appBar,
