@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/screens/filters.dart';
 import '../screens/categories.dart';
 import '../screens/favorites.dart';
 
@@ -26,6 +27,14 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('DeliMeals'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(FiltersScreen.ROUTE_NAME);
+            },
+            icon: Icon(Icons.filter),
+          )
+        ],
       ),
       body: _pages[_selectedPageIndex],
       bottomNavigationBar: BottomNavigationBar(
